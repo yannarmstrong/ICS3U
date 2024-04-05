@@ -12,3 +12,5 @@ console.log("Your name is " + x + " letters long.");
 
 let fahrenheit = prompt("Enter a temperature in degrees fahrenheit. ");
 console.log(fahrenheit + " degrees fahrenheit is " + ((fahrenheit-32)*5/9) + " degrees celcius.");
+
+console.log("Prompt can be used for many things. It can ask the user for inputs of words, numbers and true or false questions. Other examples of how prompt could be used is asking the user about their height and weight to calculate their BMI.");
