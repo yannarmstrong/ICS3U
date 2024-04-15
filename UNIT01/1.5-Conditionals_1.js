@@ -9,7 +9,7 @@ else if (age < 16){
     console.log("You're not old enough to drive yet. Grow up...");
 }
 else{
-    console.log("You are a strange age.");
+    console.log("You are old enough to drive!");
 }
 
 let user_name = prompt("What is your name? ");
@@ -32,4 +32,11 @@ else if (name_length > x){
 }
 else if (name_length < x){
     console.log("Too low ✖️");
+}
+
+if (x%2 == 0){
+    console.log("Your age is an even number.");
+}
+else if (x%2 == 1){
+    console.log("Your age is an odd number.");
 }
