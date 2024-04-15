@@ -57,3 +57,4 @@ if (random_number==0 || random_number%2 == 0 || (random_number%2 == 0 && random_
 else {
     console.log("Notso.");
 }
+console.log(random_number);
