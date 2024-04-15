@@ -34,3 +34,26 @@ else if (selection==5){
 else{
     console.log("Invalid selection.");
 }
+
+let time = parseInt(prompt("Enter an hour between 0-23. No minutes just the hour. "));
+if (time>=0 && time<=11){
+    console.log("Good morning!");
+}
+else if (time>=12 && time<=17){
+    console.log("Good afternoon!");
+}
+else if (time>=18 && time<=23){
+    console.log("Good evening!");
+}
+else {
+    console.log("Invalid hour.");
+}
+
+let random_number = Math.random() * 10;     // Get a single-digit value (with decimals)
+random_number = Math.floor(random_number);  // Chop off the decimals
+if (random_number==0 || random_number%2 == 0 || (random_number%2 == 0 && random_number%3 == 0) || (random_number==1 || random_number==2 || random_number==3 || random_number==5 || random_number==7)){
+    console.log("So.");
+}
+else {
+    console.log("Notso.");
+}
