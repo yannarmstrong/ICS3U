@@ -10,12 +10,13 @@ function whoAreYou() {
 function tax_calculator(dollars) {
     let tax = dollars * 0.13;
     let total = dollars + tax;
-    console.log("The value with tax added (13%) is: " + total + "$");
+    console.log("The value (" + dollars + "$) with tax added (13%) is: " + total + "$");
 }
 
 function calculator(operator) {
-    let num1 = parseFloat(prompt("Enter the first number:"));
-    let num2 = parseFloat(prompt("Enter the second number:"));
+    console.log("This is a calculator. ");
+    let num1 = parseInt(prompt("Enter the first number:"));
+    let num2 = parseInt(prompt("Enter the second number:"));
 
     if (operator == '+') {
         console.log(num1 + num2);
@@ -23,7 +24,7 @@ function calculator(operator) {
     else if (operator == '-') {
         console.log(num1 - num2);
     } 
-    else if (operator == '*') {
+    else if (operator == '*' || 'x') {
         console.log(num1 * num2);
     } 
     else if (operator == '/') {
@@ -41,12 +42,18 @@ function calculator(operator) {
 
 function pythagorean(legA, legB, hypoteneuse) {
     if (!hypoteneuse) {
-        console.log(Math.sqrt(legA * legA + legB * legB));
+        console.log("The hypoteneuse of this triangle is " + (Math.sqrt(legA * legA + legB * legB)) + " units long. ");
     }
     else if (!legA) {
-        console.log(Math.sqrt(hypoteneuse * hypoteneuse - legB * legB));
+        console.log("Leg A of this triangle is " + (Math.sqrt(hypoteneuse * hypoteneuse - legB * legB)) + " units long.");
     } 
     else {
-        console.log(Math.sqrt(hypoteneuse * hypoteneuse - legA * legA));
+        console.log("Leg B of this triangle is " + (Math.sqrt(hypoteneuse * hypoteneuse - legA * legA)) + " units long. ");
     }
 }
+
+//Test functions
+whoAreYou();
+tax_calculator(10);
+calculator("*");
+pythagorean(10, 8, false);
