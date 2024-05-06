@@ -55,6 +55,7 @@ function add(str){
     return `${str} added up is equal to ${output}.`;
 }
 
+// Testing functions
 //console.log(reverse(prompt("Type something. ")));
 
 //console.log(`Lets play a game of dragons and goblins. \nYou will enter a string and every "d" in the string will count as 1 dragon and every "g" in the string will count as 1 goblin. \nLets find out how many dragons and goblins are in your string!`);
