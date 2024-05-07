@@ -55,11 +55,32 @@ function add(str){
     return `${str} added up is equal to ${output}.`;
 }
 
+// Addition subtraction function
+function add_subract(str){
+    let n = 0;
+    let output = 0;
+    str = str.toString();
+    let length = str.length;
+    while (n < length){
+        if (str.charCodeAt(n) == 45){
+            output = output - parseInt(str[n+1]);
+            n = n + 2
+        }
+        else{
+        output = output + parseInt(str[n]);
+        n++
+        }
+    }
+    return `${str} added up is equal to ${output}.`;
+}
 // Testing functions
-//console.log(reverse(prompt("Type something. ")));
+console.log(reverse(prompt("Type something. ")));
 
-//console.log(`Lets play a game of dragons and goblins. \nYou will enter a string and every "d" in the string will count as 1 dragon and every "g" in the string will count as 1 goblin. \nLets find out how many dragons and goblins are in your string!`);
-//console.log(dragons_and_goblins(prompt("Type up a random mix of characters (Ex. agosdickwqpe21' po1fcpo jxgg)")));
+console.log(`Lets play a game of dragons and goblins. \nYou will enter a string and every "d" in the string will count as 1 dragon and every "g" in the string will count as 1 goblin. \nLets find out how many dragons and goblins are in your string!`);
+console.log(dragons_and_goblins(prompt("Type up a random mix of characters (Ex. agosdickwqpe21' po1fcpo jxgg)")));
 
-console.log("This functino will add a string of numbers together.")
+console.log("This functino will add a string of numbers together.");
 console.log(add(parseInt(prompt("Enter a string of numbers: "))));
+
+console.log("This functino will add and subtract a string of numbers together.");
+console.log(add_subract(prompt("Enter a string of numbers (Ex. 12352-42-532-13-53-1-23-5-1242): ")));
