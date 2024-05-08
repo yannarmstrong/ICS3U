@@ -1,5 +1,5 @@
 /**
-* 3.2 - Strings
+* 3.3 - Do While   
 * Author: YANN ARMSTRONG
 *
 * Lesson link:  https://gist.github.com/mrjamieson29/d709febee74bd9c60da1cca395f1cb80#file-3-3-do-while-md
@@ -61,10 +61,26 @@ function parrotUntilQuit(){
     return "Goodbye! ";
 }
 
+// Factorial function
+function factorial(n){
+    let output = 1;
+    const input = n;
+    if (n == 0){
+        return `${input}! = ${1}`;
+    }
+    else{
+        do{
+            output = output * n;
+            n--
+        }while (n >= 1);
+    return `${input}! = ${output}`;
+    }
+}
 // Testing functions
 console.log(negativeOnly());
 
-//console.log(printOdd(Number(prompt("Enter a number: "))));
+console.log(printOdd(Number(prompt("Enter a number: "))));
 
-//console.log(parrotUntilQuit());
+console.log(parrotUntilQuit());
 
+console.log(factorial(parseInt(prompt("Enter a number: "))));
