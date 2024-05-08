@@ -62,7 +62,7 @@ function parrotUntilQuit(){
 }
 
 // Testing functions
-//console.log(negativeOnly());
+console.log(negativeOnly());
 
 //console.log(printOdd(Number(prompt("Enter a number: "))));
 
