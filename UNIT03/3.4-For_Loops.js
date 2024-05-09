@@ -19,5 +19,5 @@ function countUp(start, stop){
         console.log(i);
     return "Done";
 }
-
+// Test
 console.log(countUp(start, stop));
