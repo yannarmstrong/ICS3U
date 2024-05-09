@@ -7,17 +7,79 @@
 
 const prompt = require('prompt-sync')();
 
+let start, stop, begin, end, n, x= "";
 // Counting up function
 function countUp(start, stop){
+    console.log("Lets count up from your start value to the stop value! ");
     start = parseInt(prompt("Enter the start value: "));
     stop = parseInt(prompt("Enter the stop value: "));
     if (start>stop){
-        console.log("Error. Start is less than stop.");
+        console.log("Error. Start is greater than stop.");
         return countUp(start, stop);
     }
-    for (let i = start; stop>=i; i++)
-        console.log(i);
+    for (let i = start; stop>=i; i++){
+       console.log(i);
+    }
     return "Done";
 }
-// Test
+
+// Counting down
+function countDown(start, stop){
+    console.log("Lets count down from your start value to the stop value! ");
+    start = parseInt(prompt("Enter the start value: "));
+    stop = parseInt(prompt("Enter the stop value: "));
+    if (start<stop){
+        console.log("Error. Start is less than stop.");
+        return countDown(start, stop);
+    }
+    for (let i = start; stop<=i; i--){
+        console.log(i);
+    }
+    return "Done";
+}
+
+// Sum function
+function sum(n){
+    let sum = 0;
+    for (let i = 1; i<=n; i++){
+        sum += i;
+    }
+    return sum;
+}
+
+// How many numbers are divisible by 4
+function count4(begin, end){
+    let count = 0;
+    begin = parseInt(prompt("What value would you like to begin at?\n"));
+    end = parseInt(prompt("What value would you like to end at?\n"));
+    for (let i = begin; i<=end; i++){
+        if (i%4==0){
+            count ++;
+        }
+    }
+    return count;
+}
+
+// Return the sum of the amount of numbers divisible by x between a start and stop value
+function sum_divisible(n, x){
+    let sum = 0;
+    n = parseInt(prompt("What value would you like to check up to.\n"));
+    x = parseInt(prompt("How would you like to divide the numbers.\n"));
+    for (let i = 0; i<=n; i++){
+        if (i%x==0){
+            sum +=i;
+        }
+    }
+    return `The sum of numbers divisible by ${x} between 0 and ${n} is ${sum}.`
+}
+
+// Test functions
 console.log(countUp(start, stop));
+
+console.log(countDown(start, stop));
+
+console.log(sum(parseInt(prompt("Enter a number: "))));
+
+console.log(count4(begin, end));
+
+console.log(sum_divisible(n, x));
