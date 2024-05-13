@@ -7,4 +7,112 @@
 
 const prompt = require('prompt-sync')();
 
-function ()
+// Print line function
+function print_line(){
+    let output = "";
+    let emoji = "";
+    let option = parseInt(prompt("Which emoji would you like to print?\n1. 💩\n2. 💥\n3. ⚽\n4. 🐿️\n5. 🐠"));
+    if (option == 1){
+        emoji = "💩";
+    }
+    else if (option == 2){
+        emoji = "💥";
+    }
+    else if (option == 3){
+        emoji = "⚽";
+    }
+    else if (option == 4){
+        emoji = "🐿️";   
+    }
+    else{
+        emoji = "🐠";
+    }
+    let length = parseInt(prompt(`How many "${emoji}" should I print? `));
+    if (length >= 0){
+        for (let line = 1; line <= length; line++){
+            output += emoji;
+        }
+        return output;
+    }
+    else{
+        return "Invalid number. ";
+    }
+}
+
+// Square of emojis
+function print_square(){
+    let output = "";
+    let length = "";
+    let emoji = "";
+    let option = parseInt(prompt("Which emoji would you like to print?\n1. 💩 \n2. 💥 \n3. ⚽ \n4. 🐿️ \n5. 🐠 "));
+    if (option == 1){
+        emoji = "💩";
+    }
+    else if (option == 2){
+        emoji = "💥";
+    }
+    else if (option == 3){
+        emoji = "⚽";
+    }
+    else if (option == 4){
+        emoji = "🐿️";   
+    }
+    else{
+        emoji = "🐠";
+    }
+    let width = parseInt(prompt(`How wide should the square of "${emoji}" be? `));
+    if (width >= 0){
+        for (let height = 1; height <= width; height++){
+            for (let line = 1; line < width; line++){
+                output += emoji;
+            }
+            output += `${emoji}\n`;
+        }
+        return output;
+    }
+    else{
+        return "Invalid number. ";
+    }
+}
+
+// Print outline
+function print_outline(){
+    let output = "";
+    let swap = 1;
+    let n = "";
+    let width = parseInt(prompt(`How wide should the square be? `));
+    if (width >= 0){
+        let top_bottom = "";
+        for (let edge = 1; edge <= width; edge++){
+            top_bottom += "⚽";
+        }
+        console.log(`${top_bottom}`);
+        let middle_chunk = width - 3;
+        while (middle_chunk>=n){
+            let middle = "⚽";
+            for (let x = 0; x <=middle_chunk; x++){
+                middle += "🏈";
+            }
+            middle += "⚽";
+            console.log(`${middle}`);
+            n++
+        }
+        return top_bottom;
+    }
+    else{
+        return "Invalid number. ";
+    }
+}
+// Print diamond
+function print_diamond(){
+    
+}
+
+// Test functions
+//console.log(print_line());
+
+//console.log(print_square());
+
+//console.log(print_outline());
+
+console.log(print_diamond());
