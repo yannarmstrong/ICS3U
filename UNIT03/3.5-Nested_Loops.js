@@ -105,27 +105,58 @@ function print_outline(){
 }
 // Print diamond
 function print_diamond(){
-    let a = 0;
-    let output, line, shape= "";
-    //let row = ((parseInt(prompt("How wide would you like your diamond to be? ")))*2) - 1;
-    let row = 5;
-    let counter, b = (row/2)+1
-    for (let i = 0; i<=((row/2)+1); i++){
-        line = " ";
-        do {
-            line += "x";
-            a++
-        } while (a<counter)
-        do {
-            shape += "⚽";
-            b--
-        } while (b => 0)
-        output += line + shape + "\n";
-        a = 0;
-        counter--
+    let output = "";
+    let space, shape = "";
+    let emoji = "";
+    let option = parseInt(prompt("Which emoji would you like to print?\n1. 💩 \n2. 💥 \n3. ⚽ \n4. 🐿️ \n5. 🐠 "));
+    if (option == 1){
+        emoji = "💩";
     }
-    return `Done!\n ${output}`;
+    else if (option == 2){
+        emoji = "💥";
+    }
+    else if (option == 3){
+        emoji = "⚽";
+    }
+    else if (option == 4){
+        emoji = "🐿️";   
+    }
+    else{
+        emoji = "🐠";
+    }
+    let width = parseInt(prompt("How wide would you like your diamond to be? "));
+    let row = (width * 2) - 1;
+    let counter = width
+    for (let t = 0; t < width; t++){
+      space = "";
+      shape = "";
+      for (let l = 0; l < counter; l++){
+        space += " ";
+      }
+      for (let s = counter; s <= width; s++){
+        shape += emoji;
+      }
+      output += space + shape + "\n";
+      counter--
+    }
+    counter = width-1;
+    for (let b = 0; b < (width - 1); b++){
+      space = "";
+      shape = "";
+      for (let x = counter; x <= width; x++){
+        space += " ";
+      }
+      for (let y = 0; y < counter; y++){
+        shape += emoji;
+    }
+    output += space + shape + "\n";
+    counter--
+    }
+    return output;
 }
+
+// Test functions
+console.log(print_diamond());
 
 // Test functions
 //console.log(print_line());
