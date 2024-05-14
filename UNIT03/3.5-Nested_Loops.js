@@ -105,7 +105,26 @@ function print_outline(){
 }
 // Print diamond
 function print_diamond(){
-    
+    let a = 0;
+    let output, line, shape= "";
+    //let row = ((parseInt(prompt("How wide would you like your diamond to be? ")))*2) - 1;
+    let row = 5;
+    let counter, b = (row/2)+1
+    for (let i = 0; i<=((row/2)+1); i++){
+        line = " ";
+        do {
+            line += "x";
+            a++
+        } while (a<counter)
+        do {
+            shape += "⚽";
+            b--
+        } while (b => 0)
+        output += line + shape + "\n";
+        a = 0;
+        counter--
+    }
+    return `Done!\n ${output}`;
 }
 
 // Test functions
