@@ -156,9 +156,6 @@ function print_diamond(){
 }
 
 // Test functions
-console.log(print_diamond());
-
-// Test functions
 //console.log(print_line());
 
 //console.log(print_square());
