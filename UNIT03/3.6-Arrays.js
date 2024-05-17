@@ -10,6 +10,7 @@ const prompt = require('prompt-sync')();
 // Print array function
 function print_array(arr){
     console.log("Lets print this array! ");
+    //Print the array one value at a time
     for (let i = 0; i <= (arr.length - 1); i++){
         console.log(arr[i]);
     }
@@ -18,8 +19,10 @@ function print_array(arr){
 
 // Min function
 function min(arr){
+    //Declare variables for function
     let min = arr[0];
     let position = "";
+    //Go through the array and determine the lowest value using an if statement
     for (let i = 0; i <= (arr.length - 1); i++){
         if (arr[i] < min){
             min = arr[i];
@@ -31,20 +34,25 @@ function min(arr){
 
 // Finding the longest string
 function longest_string(arr){
+    //Declare variables for function
     let longest = arr[0];
     let temp = "";
+    //Go through array and look for largest string length
     for (let i = 0; i <= (arr.length - 1); i++){
         temp = arr[i]
         if (temp.length > longest.length){
             longest = arr[i]
         }
     }
+    //Find length of longest string
     let length = longest.length;
+    //End function and output results
     return `The longest string in this array is ${longest} at ${length} characters long!`;
 }
 
 // Contain function
 function contains(arr, value) {
+    //Go through array and check if the value input from the user is equal to any values within the given array
     for (let i = 0; i <= (arr.length - 1); i++) {
         if (arr[i] == value) {
             console.log(testArrayFour);
@@ -59,6 +67,7 @@ function contains(arr, value) {
 function min_max(arr){
     let min = arr[0];
     let max = arr[0];
+    // Go through function and check for largest and smallest value
     for (let i = 0; i <= (arr.length - 1); i++){
         if (arr[i] < min){
             min = arr[i];
@@ -67,39 +76,51 @@ function min_max(arr){
             max = arr[i]
         }
     }
+    //Output results
     return `The max value is ${max}\nThe min value is ${min}`;
 }
 
 // Sum function
 function sum(arr){
     let sum = 0;
+    //Go through function and add up values to the sum
     for (i = 0; i<arr.length; i++){
         if ((isNaN(arr[i]))){
+            //If value is not a number skip
         }
         else if ((arr[i] == true)){
+            //If number is true let it equal to one
             sum += true;
         }
         else{
+            //Add value to total
             sum += parseInt(arr[i]);
         }
         console.log(`${arr[i]}\n${sum}`)
     }
+    //Output the sum
     return `The sum of this array is ${sum}`;
 }
 
 // Reverse strings
 function reverse_string(arr){
     let output = "";
+    //Create new array that is the same length as the input array
     let reversedArray = new Array(arr.length);
+    //Go through array
     for (let i = 0; i < arr.length; i++){
+        // For each value reverse it and store it as reverse
         let reverse = arr[i];
         output = "";
+        // Build string of reversed strings from array and add reversed string to the new array of reversed strings
         for (let x = reverse.length - 1; x>=0; x--){
             output += reverse[x];
             reversedArray[i] = output;
         }
+        //Output the reversed string for that value
         console.log(output);
     }
+    //Return final array
     return reversedArray;
 }
 

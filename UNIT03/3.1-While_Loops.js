@@ -19,10 +19,12 @@ function countdown(start, stop){
         count = start-stop+1;
         console.log("Counting down: ");
         console.log(start);
+        //While the start value is not equal to (more than the stop value) keep looping
         while (start != stop){
             start--
             console.log(start);
         }
+        // End functino
         return `Countdown complete! This function looped ${count} times.`;
     }
     // Scenario for if start is less than stop
@@ -54,14 +56,18 @@ function randInt(min, max) {
  
  
 function random_until(min, max, stop2){
+    //Set the value of the random number
     let randomNumber ="";
     if (min<max && stop2>=min && stop2<=max){
+        // While true
         while (randomNumber != stop2){
             randomNumber = randInt(min, max);
             console.log(randomNumber);
         }
+        //End function
     return `The computer guessed your number (${stop2})!`;
     }
+    //scenario where min is greater than max
     else if (min>max){
         console.log("Error. Min is greater than Max")
         min = parseInt(prompt("Enter a new minimum value: "));
@@ -69,11 +75,13 @@ function random_until(min, max, stop2){
         stop2 = parseInt(prompt("Enter a new number in between your new min and max number: "));
         return random_until(min, max, stop2);
     }
+    //Scenario if stop is out side of the boundaries
     else if (stop>max || stop<min){
         console.log("Error. Chosen is outside of min and max parameters")
         stop2 = parseInt(prompt("Enter a new number in between " + min + " and " + max + ": "));
         return random_until(min, max, stop2);
     }
+    //Scenario if min = max
     else if (min == max){
         console.log("Error. Min cannot equal max. ");
         min = parseInt(prompt("Enter a new minimum value: "));
@@ -81,6 +89,7 @@ function random_until(min, max, stop2){
         stop2 = parseInt(prompt("Enter a new number in between your new min and max number: "));
         return random_until(min, max, stop2);
     }
+    //Scenario if user inputs non numbers
     else{
         console.log("Error. Please enter valid numbers as inputs. ");
         min = parseInt(prompt("Enter a minimum value: "));
@@ -92,14 +101,18 @@ function random_until(min, max, stop2){
 }
 
 function average(n){
+    //Declare variables
     let total = 0;
     const outOf = n;
     let valueNumber = 1;
+    //While true loop
     while (n != 0){
+        // Add up the sum of all inputs
         total = total + parseInt(prompt(`Please enter value ${valueNumber}/${outOf} --> `));
         n--
         valueNumber++
     }
+    // End functino and average out the sum
     return `The average of these ${outOf} values is ${total/outOf}`;
 }
  
